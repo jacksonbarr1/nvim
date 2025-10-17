@@ -7,7 +7,6 @@ return {
       require("onedark").setup({
         style = "dark",
         transparent = true,
-        term_colors = true,
       })
       require("onedark").load()
     end,

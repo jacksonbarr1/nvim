@@ -2,8 +2,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    branch = "main",
+    branch = "master",
     build = ":TSUpdate",
+    main = "nvim-treesitter.configs",
     opts = {
       ensure_installed = {
         "astro",
@@ -49,6 +50,9 @@ return {
       },
       auto_install = true,
     },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter-context",

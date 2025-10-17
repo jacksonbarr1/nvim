@@ -15,4 +15,3 @@ vim.opt.smartindent = true
 vim.opt.mouse = 'a'
 
 vim.opt.undofile = true
-vim.opt.termguicolors = true
