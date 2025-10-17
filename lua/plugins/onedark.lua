@@ -7,6 +7,19 @@ return {
       require("onedark").setup({
         style = "dark",
         transparent = true,
+        term_colors = true,
+
+        code_style = {
+          comments = "italic",
+        },
+
+        lualine = {
+          transparent = true,
+        },
+
+        diagnostics = {
+          darker = true,
+        }
       })
       require("onedark").load()
     end,
