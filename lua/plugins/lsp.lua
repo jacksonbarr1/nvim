@@ -153,7 +153,9 @@ return {
       local servers = {
         bashls = {},
         marksman = {},
-        -- clangd = {},
+        clangd = {},
+        basedpyright = {},
+        eslint = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -182,8 +184,6 @@ return {
         },
       }
 
-      -- Ensure the servers and tools above are installed
-      --
       -- To check the current status of installed tools and/or manually install
       -- other tools, you can run
       --    :Mason
