@@ -28,4 +28,4 @@ require("lazy").setup({
 
 require("config.keymaps")
 
-vim.cmd("ShowkeysToggle")
+-- vim.cmd("ShowkeysToggle")
