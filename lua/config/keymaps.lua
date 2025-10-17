@@ -13,3 +13,11 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set("n", "<leader>cf", function()
 	require("conform").format()
 end, { desc = "Format current file" })
+
+vim.keymap.set(
+	"i",
+	"<C-j>",
+	'copilot#Accept("<CR>")',
+	{ silent = true, expr = true, replace_keycodes = false, desc = "Copilot: Accept" }
+)
+vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true, desc = "Copilot: Dismiss" })
