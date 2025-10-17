@@ -1,16 +1,66 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
-    lazy  = "false",
+    lazy = false,
+    branch = "main",
     build = ":TSUpdate",
-    config = function()
-      local config = require("nvim-treesitter.configs")
-      config.setup({
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end
-  }
+    opts = {
+      ensure_installed = {
+        "astro",
+        "bash",
+        "c",
+        "cpp",
+        "css",
+        "diff",
+        "dockerfile",
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+        "graphql",
+        "html",
+        "java",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "json5",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
+        "ruby",
+      },
+      highlight = {
+        enable = true, 
+      },
+      indent = {
+        enable = true,
+      },
+      auto_install = true,
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    event = "BufRead",
+    opts = {
+      multiwindow = true,
+    },
+    config = function(_, opts)
+        require("treesitter-context").setup(opts)
+    end,
+  },
 }
