@@ -1,20 +1,31 @@
+-- Formatting.
 return {
-	"stevearc/conform.nvim",
-	opts = {
-		formatters_by_ft = {
-			lua = { "stylua" },
-			-- Conform will run multiple formatters sequentially
-			python = { "isort", "black" },
-			-- You can customize some of the format options for the filetype (:help conform.format)
-			rust = { "rustfmt" },
-			-- Conform will run the first available formatter
-			javascript = { "prettierd", "prettier", stop_after_first = true },
-			typescript = { "prettierd", "prettier", stop_after_first = true },
-		},
-		format_on_save = {
-			-- These options will be passed to conform.format()
-			timeout_ms = 500,
-			lsp_format = "fallback",
-		},
-	},
+    {
+        'stevearc/conform.nvim',
+        opts = {
+            formatters_by_ft = {
+                c = { name = 'clangd', timeout_ms = 500, lsp_format = 'prefer' },
+                go = { name = 'gopls', timeout_ms = 500, lsp_format = 'prefer' },
+                javascript = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                javascriptreact = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                json = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                jsonc = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                less = { 'prettier' },
+                lua = { 'stylua' },
+                markdown = { 'prettier' },
+                rust = { name = 'rust_analyzer', timeout_ms = 500, lsp_format = 'prefer' },
+                scss = { 'prettier' },
+                sh = { 'shfmt' },
+                typescript = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                typescriptreact = { 'prettier', name = 'dprint', timeout_ms = 500, lsp_format = 'fallback' },
+                yaml = { 'prettier' },
+                -- For filetypes without a formatter:
+                ['_'] = { 'trim_whitespace', 'trim_newlines' },
+            },
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_format = "fallback"
+            }
+        },
+    },
 }
