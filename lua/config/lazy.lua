@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 
 require("config.options")
 require("config.keymaps")
+require("lsp")
 
 require("lazy").setup({
   spec = {
