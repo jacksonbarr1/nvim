@@ -1,23 +1,8 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-vim.keymap.set("n", "gl", function()
-	vim.diagnostic.open_float()
-end, { desc = "Open Diagnostics in Float" })
 
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
-
-vim.keymap.set("n", "<leader>cf", function()
-	require("conform").format()
-end, { desc = "Format current file" })
-
-vim.keymap.set(
-	"i",
-	"<C-j>",
-	'copilot#Accept("<CR>")',
-	{ silent = true, expr = true, replace_keycodes = false, desc = "Copilot: Accept" }
-)
-vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true, desc = "Copilot: Dismiss" })
