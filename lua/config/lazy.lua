@@ -18,6 +18,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("config.options")
+require("config.keymaps")
 
 require("lazy").setup({
   spec = {
@@ -25,7 +26,3 @@ require("lazy").setup({
   },
   checker = { enabled = true },
 })
-
-require("config.keymaps")
-
--- vim.cmd("ShowkeysToggle")
